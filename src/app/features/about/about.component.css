@@ -16,8 +16,43 @@
 
 
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .split-left {
     text-align: center;
+  }
+} */
+
+@media (max-width: 900px) {
+  .layout-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .split-left {
+    text-align: center;
+  }
+  
+  /* --- New Horizontal Mobile Layout for Experience Cards --- */
+  .experience-pill {
+    padding: 1.2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    align-items: start;
+    text-align: left;
+  }
+  
+  .exp-icon {
+    grid-row: span 2; /* Forces the icon to sit on the left of both text blocks */
+  }
+  
+  .exp-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  .exp-date {
+    margin-top: 0;
+    font-size: 0.9rem;
   }
 }
