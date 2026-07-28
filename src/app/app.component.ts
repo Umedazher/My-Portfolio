@@ -37,6 +37,16 @@ export class AppComponent implements AfterViewInit {
     this.mouseY.set(event.clientY);
   }
 
+  // ADD THIS: New Touch Listeners for Mobile Swiping/Touching
+  @HostListener('document:touchmove', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
+  onTouch(event: TouchEvent) {
+    if (event.touches.length > 0) {
+      this.mouseX.set(event.touches[0].clientX);
+      this.mouseY.set(event.touches[0].clientY);
+    }
+  }
+
   ngAfterViewInit() {
     if (typeof IntersectionObserver !== 'undefined') {
         const observer = new IntersectionObserver((entries) => {
