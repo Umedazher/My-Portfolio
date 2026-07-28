@@ -11,3 +11,15 @@
 .project-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.25rem; }
 .project-tagline { font-size: 0.95rem; color: #a0a0a0; }
 @media (max-width: 900px) { .projects-grid { grid-template-columns: 1fr; } }
+
+@media (max-width: 600px) {
+  .project-image-wrapper {
+    height: 200px;
+  }
+  .project-card {
+    padding: 1rem;
+  }
+  .project-title {
+    font-size: 1.2rem;
+  }
+}

@@ -272,3 +272,21 @@
         width: 100%;
     }
 }
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding-top: 100px;
+  }
+  .avatar-img {
+    height: 120px;
+  }
+  .greeting {
+    font-size: 1.25rem;
+  }
+  .headline {
+    margin-bottom: 1.5rem;
+  }
+  .stats-row {
+    gap: 1rem;
+  }
+}

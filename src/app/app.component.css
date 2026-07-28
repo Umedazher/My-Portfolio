@@ -91,3 +91,16 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+@media (max-width: 768px) {
+  .marquee-wrapper {
+    padding: 1rem 0;
+  }
+  .marquee-content span {
+    font-size: 1.1rem;
+    gap: 0.4rem;
+  }
+  .logo-icon {
+    font-size: 1.3rem;
+  }
+}

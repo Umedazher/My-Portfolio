@@ -202,3 +202,21 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px -10px rgba(255, 90, 54, 0.3);
 }
+
+@media (max-width: 768px) {
+  .footer-cta-card {
+    padding: 3rem 1.2rem;
+  }
+  .cta-heading {
+    font-size: 1.8rem;
+  }
+  .contact-details-inline {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .contact-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}
