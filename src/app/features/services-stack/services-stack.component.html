@@ -1,0 +1,114 @@
+<section class="section layout-split" id="services">
+  <div class="split-left">
+    <h2 class="section-title">Tools I use to build<br>seamless user<br><span class="text-muted">experiences.</span></h2>
+    <p class="bio-text mb-4">My tech stack</p>
+
+    <div class="tech-stack-icons reveal">
+      <div class="tech-box tooltip-container" data-tooltip="Angular (v21+)"><img src="../assets/angular.svg"
+          alt="Angular"></div>
+      <div class="tech-box tooltip-container" data-tooltip="Angular Material"><img src="../assets/angular-material.svg"
+          alt="Angular Material"></div>
+      <div class="tech-box tooltip-container" data-tooltip="TypeScript"><img src="../assets/typescript.svg"
+          alt="TypeScript"></div>
+      <div class="tech-box tooltip-container" data-tooltip="JavaScript"><img src="../assets/javascript.svg"
+          alt="JavaScript"></div>
+      <div class="tech-box tooltip-container" data-tooltip="HTML5"><img src="../assets/html5.svg" alt="HTML5"></div>
+      <div class="tech-box tooltip-container" data-tooltip="CSS3"><img src="../assets/css3.svg" alt="CSS3"></div>
+      <div class="tech-box tooltip-container" data-tooltip="RxJS"><img src="../assets/rxjs.png" alt="RxJS"></div>
+      <div class="tech-box tooltip-container" data-tooltip="NgRx"><img src="../assets/ngrx.png" alt="NgRx"></div>
+      <div class="tech-box tooltip-container" data-tooltip="Java"><img src="../assets/java.svg" alt="Java"></div>
+      <div class="tech-box tooltip-container" data-tooltip="Spring Boot"><img src="../assets/spring-boot.svg"
+          alt="Spring Boot"></div>
+      <div class="tech-box tooltip-container" data-tooltip="Spring Security"><img src="../assets/spring-security.svg"
+          alt="Spring Security"></div>
+      <div class="tech-box tooltip-container" data-tooltip="Oracle SQL & MySQL"><img src="../assets/database.svg"
+          alt="Database"></div>
+      <div class="tech-box tooltip-container" data-tooltip="Git & GitHub"><img src="../assets/git.svg" alt="Git"></div>
+      <div class="tech-box tooltip-container" data-tooltip="Postman"><img src="../assets/postman.svg" alt="Postman">
+      </div>
+    </div>
+  </div>
+
+  <div class="split-right">
+    <div class="services-pills reveal">
+      <!-- Core Architecture & Performance -->
+      <div class="service-pill"><app-icon name="monitor" customClass="icon-sm text-white"></app-icon> Modular
+        Architecture</div>
+      <div class="service-pill"><app-icon name="monitor" customClass="icon-sm text-white"></app-icon> Performance
+        Optimization</div>
+      <div class="service-pill"><app-icon name="monitor" customClass="icon-sm text-white"></app-icon> Lazy Loading</div>
+
+      <!-- State & Core Concepts -->
+      <div class="service-pill has-dot"><app-icon name="monitor" customClass="icon-sm text-white"></app-icon> State
+        Management <div class="floating-dot red-dot inline-dot"></div>
+      </div>
+      <div class="service-pill"><app-icon name="monitor" customClass="icon-sm text-white"></app-icon> Reactive Forms
+      </div>
+      <div class="service-pill"><app-icon name="monitor" customClass="icon-sm text-white"></app-icon> Dependency
+        Injection</div>
+
+      <!-- Security & Integrations -->
+      <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> RESTful API
+        Integration</div>
+      <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> Payment Gateway
+        Integration</div>
+      <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> UI Security & JWT
+        Tokens</div>
+      <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> Scanner
+        Implementation</div>
+
+      <!-- Development & Maintenance -->
+      <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> Code Upgradation &
+        Refactoring</div>
+      <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> Agile & CI/CD
+        Pipelines</div>
+
+        <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> HealthCare Solutions</div>
+
+        <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> Wealth Management</div>
+        <div class="service-pill"><app-icon name="server" customClass="icon-sm text-white"></app-icon> Fintech | Banking</div>
+    </div>
+    <div class="mt-4">
+    <button class="view-skills-btn" (click)="openModal()">
+      View All Skills & Expertise <span class="arrow">↗</span>
+    </button>
+  </div>
+  </div>
+</section>
+
+<!-- Full Screen Modal -->
+@if(isModalOpen) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      
+      <div class="modal-header">
+        <h3 class="modal-title">Comprehensive Skillset</h3>
+        <button class="close-modal-btn" (click)="closeModal()">×</button>
+      </div>
+
+      <div class="modal-body custom-scrollbar">
+        <div class="accordion-container">
+          @for(category of skillsData; track category.category; let i = $index) {
+            <div class="accordion-item" [class.active]="openPanelIndex === i">
+              <div class="accordion-header" (click)="togglePanel(i)">
+                <span>{{ category.category }}</span>
+                <span class="toggle-icon">{{ openPanelIndex === i ? '−' : '+' }}</span>
+              </div>
+              
+              @if(openPanelIndex === i) {
+                <div class="accordion-body">
+                  <ul class="skills-grid">
+                    @for(skill of category.skills; track skill) {
+                      <li><span class="bullet">✦</span> {{ skill }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+}

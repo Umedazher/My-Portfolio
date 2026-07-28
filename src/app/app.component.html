@@ -1,195 +1,40 @@
-<div class="portfolio-container" [class.dark-theme]="isDarkMode()">
-<nav class="navbar" [class.scrolled]="isScrolled()">
-  <div class="nav-content">
-    <div class="logo">&lt;Umed.Dev /&gt;</div>
-    
-    <div class="nav-links" [class.mobile-open]="isMobileMenuOpen()">
-      <a href="#about" (click)="scrollTo('about')">About</a>
-      <a href="#skills" (click)="scrollTo('skills')">Skills</a>
-      <a href="#experience" (click)="scrollTo('experience')">Experience</a>
-      <a href="#projects" (click)="scrollTo('projects')">Projects</a>
-      <a href="#education" (click)="scrollTo('education')">Education & Awards</a>
-      <a href="#contact" (click)="scrollTo('contact')">Contact</a>
-    </div>
-
-    <div class="nav-controls">
-      <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle Theme">
-        <span *ngIf="isDarkMode()">☀️</span>
-        <span *ngIf="!isDarkMode()">🌙</span>
-      </button>
-      <button class="mobile-toggle" (click)="toggleMobileMenu()" aria-label="Menu">
-        <span *ngIf="!isMobileMenuOpen()">&#9776;</span>
-        <span *ngIf="isMobileMenuOpen()">&#10006;</span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<header class="hero-section" id="about">
-  <div class="hero-content" [@fadeInUp]>
-    <p class="greeting">Hi, I'm Umed Azher</p>
-    <h1 class="headline">Software Developer | Angular Specialist</h1>
-    <p class="elevator-pitch">
-      Angular Developer with 4+ years of experience building scalable and high-performance enterprise web applications using Angular (v21+), TypeScript, and RxJS. Skilled in developing responsive UI, implementing state management (NgRx), and optimizing application performance through lazy loading and modular architecture. Experienced in integrating RESTful APIs and Spring Boot backend services. Strong collaborator in Agile environments with CI/CD pipelines, focused on delivering efficient and user-centric solutions.
-    </p>
-    <div class="cta-group">
-      <a href="#contact" class="btn primary">Get in Touch</a>
-      <a href="../assets/Umed_Azher_Angular_Developer_Resume.pdf" download="Umaid_Azhar_Resume.pdf" class="btn secondary">
-        <app-icon name="download" customClass="icon-sm"></app-icon> Download Resume
-      </a>
-    </div>
-    <div class="social-links">
-      <a href="#" aria-label="GitHub"><app-icon name="github" customClass="icon-md"></app-icon></a>
-      <a href="#" aria-label="LinkedIn"><app-icon name="linkedin" customClass="icon-md"></app-icon></a>
-      <a href="#" aria-label="Email"><app-icon name="mail" customClass="icon-md"></app-icon></a>
-    </div>
-  </div>
-  <div class="scroll-indicator" (click)="scrollTo('skills')">
-    <app-icon name="chevronDown" customClass="icon-lg animate-bounce"></app-icon>
-  </div>
-</header>
-
-<main>
-  <section class="section skills-section reveal" id="skills">
-    <div class="section-header">
-      <h2><app-icon name="cpu" customClass="icon-header"></app-icon> Technical Arsenal</h2>
-      <p>My Core Competencies</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card hover-card" *ngFor="let skill of skillsData()">
-        <h3>{{ skill.category }}</h3>
-        <ul class="skill-list">
-          <li *ngFor="let item of skill.items"><span class="bullet"></span>{{ item }}</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section experience-section reveal" id="experience">
-      <div class="section-header">
-      <h2><app-icon name="briefcase" customClass="icon-header"></app-icon> Professional Experience</h2>
-      <p>My Career Journey</p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item" *ngFor="let exp of experienceData()">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content hover-card">
-          <div class="exp-header">
-            <h3>{{ exp.role }}</h3>
-            <span class="exp-company">{{ exp.company }}</span>
-            <span class="exp-period">{{ exp.period }}</span>
-          </div>
-          <ul class="achievements-list">
-            <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
-          </ul>
-          <div class="tech-stack" style="margin-top: 1rem;">
-             <span class="tech-tag" *ngFor="let tech of exp.technologies">{{ tech }}</span>
-          </div>
+<div class="portfolio-wrapper dark-theme">
+  <!-- Grid Background -->
+  <div class="bg-grid"></div>
+  
+  <app-navbar></app-navbar>
+  
+  <main>
+    <app-hero></app-hero>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <!-- Group 1 -->
+        <div class="marquee-content">
+          <span><span class="logo-icon">✦</span> Angular (v21+)</span>
+          <span><span class="logo-icon">✦</span> TypeScript</span>
+          <span><span class="logo-icon">✦</span> RxJS & NgRx</span>
+          <span><span class="logo-icon">✦</span> JavaScript</span>
+          <span><span class="logo-icon">✦</span> HTML5 / CSS3</span>
+          <span><span class="logo-icon">✦</span> Spring Boot APIs</span>
+        </div>
+        <!-- Group 2 (Duplicate for seamless infinite loop) -->
+        <div class="marquee-content">
+          <span><span class="logo-icon">✦</span> Angular (v21+)</span>
+          <span><span class="logo-icon">✦</span> TypeScript</span>
+          <span><span class="logo-icon">✦</span> RxJS & NgRx</span>
+          <span><span class="logo-icon">✦</span> JavaScript</span>
+          <span><span class="logo-icon">✦</span> HTML5 / CSS3</span>
+          <span><span class="logo-icon">✦</span> Spring Boot APIs</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="section projects-section reveal" id="projects">
-    <div class="section-header">
-      <h2><app-icon name="code" customClass="icon-header"></app-icon> Featured Projects</h2>
-      <p>Impact & Architecture</p>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card hover-card" *ngFor="let project of projectsData()">
-        <div class="project-content">
-          <h3 class="project-title">{{ project.title }}</h3>
-          <p class="project-tagline">{{ project.tagline }}</p>
-          <div class="tech-stack">
-            <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
-          </div>
-          <div class="project-details">
-             <ul class="achievements-list" style="margin-bottom: 0;">
-                <li *ngFor="let desc of project.description">{{ desc }}</li>
-             </ul>
-          </div>
-        </div>
-        <div class="project-links" *ngIf="project.githubUrl || project.liveUrl">
-          <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="link-btn"><app-icon name="github" customClass="icon-sm"></app-icon> Source</a>
-          <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="link-btn"><app-icon name="external" customClass="icon-sm"></app-icon> Live Demo</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <app-about></app-about>
+    <app-services-stack></app-services-stack>
+    <app-projects></app-projects>
+    <app-contact></app-contact>
+  </main>
 
-  <section class="section education-awards-section reveal" id="education">
-      <div class="edu-awards-container">
-        <!-- Education -->
-        <div class="hover-card inner-pad">
-           <div class="section-header" style="margin-bottom: 2rem;">
-              <h2 style="font-size: 2rem;"><app-icon name="graduationCap" customClass="icon-header"></app-icon> Education</h2>
-           </div>
-           <div class="edu-item" *ngFor="let edu of educationData()">
-              <h3 class="edu-degree">{{ edu.degree }}</h3>
-              <p class="edu-inst">{{ edu.institution }}</p>
-              <div class="edu-meta">
-                 <span>{{ edu.date }}</span>
-                 <span class="edu-score">Score: {{ edu.score }}</span>
-              </div>
-           </div>
-        </div>
-        
-        <!-- Awards -->
-        <div class="hover-card inner-pad">
-           <div class="section-header" style="margin-bottom: 2rem;">
-              <h2 style="font-size: 2rem;"><app-icon name="award" customClass="icon-header"></app-icon> Awards</h2>
-           </div>
-           <div class="award-list">
-              <div class="award-item" *ngFor="let award of awardsData()">
-                 <div class="award-icon"><app-icon name="award" customClass="icon-md"></app-icon></div>
-                 <div class="award-content">
-                    <h3 class="award-title">{{ award.title }}</h3>
-                    <p class="award-meta">{{ award.issuer }} &bull; {{ award.date }}</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </div>
-  </section>
-
-  <section class="section contact-section reveal" id="contact">
-    <div class="section-header">
-      <h2>Get In Touch</h2>
-      <p>Let's build something amazing together.</p>
-    </div>
-    <div class="contact-container hover-card">
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        <p>Feel free to reach out for collaborations, opportunities, or just to say hi.</p>
-        <div class="info-items">
-          <div class="info-item"><app-icon name="mail" customClass="icon-md"></app-icon><span>umaidazher&#64;gmail.com</span></div>
-          <div class="info-item"><app-icon name="phone" customClass="icon-md"></app-icon><span>+91 8421324371</span></div>
-          <div class="info-item"><app-icon name="mapPin" customClass="icon-md"></app-icon><span>Pune, Maharashtra</span></div>
-          <div class="info-item"><app-icon name="linkedin" customClass="icon-md"></app-icon><span>LinkedIn / GitHub</span></div>
-        </div>
-      </div>
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" formControlName="name" placeholder="Umed Azhar">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" formControlName="email" placeholder="umaidazher@gmail.com">
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" formControlName="message" rows="4" placeholder="How can I help you?"></textarea>
-        </div>
-        <button type="submit" class="btn primary submit-btn" [disabled]="contactForm.invalid || isSubmitting()">
-          {{ isSubmitting() ? 'Sending...' : 'Send Message' }}
-        </button>
-        <div class="success-message" *ngIf="submitSuccess()">Message sent successfully! (Simulated)</div>
-      </form>
-    </div>
-  </section>
-</main>
-<footer class="footer">
-  <p>&copy; {{ currentYear }} Umed Azher. Built with Angular 17+ (Signals & Standalone).</p>
-</footer>
+  <app-footer></app-footer>
+  <div class="custom-cursor" [style.left.px]="mouseX()" [style.top.px]="mouseY()"></div>
 </div>

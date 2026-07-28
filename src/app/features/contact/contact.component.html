@@ -1,0 +1,49 @@
+<section class="section" id="contact">
+  <div class="footer-cta-card reveal">
+    <!-- <h2 class="cta-heading">Have an idea?<br>Let's work together</h2>
+    <p class="cta-subheading">I'll hit you up within 12 hours to get things moving!</p> -->
+    <h2 class="cta-heading">Need a High-Performance Frontend?<br>Let's Build It.</h2>
+    <p class="cta-subheading">With 4+ years of Angular expertise, I'm ready to Build and deliver your next enterprise solution.</p>
+
+
+    <button class="btn btn-primary lg" (click)="toggleContact()">
+      Let's Talk <app-icon name="arrowUpRight" customClass="icon-sm" class="hover-arrow"></app-icon>
+    </button>
+
+    @if (showContactDetails()) {
+    <div class="contact-details-inline mt-4" [@fadeInUp]>
+      <a href="mailto:umaidazher@gmail.com" class="contact-pill">
+        <app-icon name="mail" customClass="icon-sm"></app-icon> umaidazher&#64;gmail.com
+      </a>
+      <a href="tel:+918421324371" class="contact-pill">
+        <app-icon name="phone" customClass="icon-sm"></app-icon> +91 8421324371
+      </a>
+      <a href="https://linkedin.com/in/Umed-Azhar" target="_blank" class="contact-pill">
+        <app-icon name="linkedin" customClass="icon-sm"></app-icon> LinkedIn
+      </a>
+    </div>
+    }
+
+    <div class="social-links mt-5">
+      <p class="text-sm font-semibold mb-3 text-white">Follow My Professional Journey</p>
+      <div class="social-icons">
+        <!-- <a href="#" class="social-icon github"><app-icon name="github" class="icon-md"></app-icon></a>
+        <a href="https://linkedin.com/in/Umed-Azhar" class="social-icon linkedin"><app-icon name="linkedin"
+            class="icon-md"></app-icon></a>
+        <a href="#" class="social-icon mail"><app-icon name="mail" class="icon-md"></app-icon></a> -->
+
+        <a href="https://github.com/Umedazher" class="social-icon github" target="_blank" rel="noopener noreferrer">
+          <app-icon name="github" class="icon-md"></app-icon>
+        </a>
+        <a href="https://linkedin.com/in/Umed-Azhar" class="social-icon linkedin" target="_blank"
+          rel="noopener noreferrer">
+          <app-icon name="linkedin" class="icon-md"></app-icon>
+        </a>
+        <a href="mailto:umaidazher@gmail.com" class="social-icon mail">
+          <app-icon name="mail" class="icon-md"></app-icon>
+        </a>
+      </div>
+    </div>
+    <div class="floating-dot red-dot bottom-center"></div>
+  </div>
+</section>

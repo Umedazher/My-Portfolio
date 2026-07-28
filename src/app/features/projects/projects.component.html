@@ -1,0 +1,25 @@
+<section class="section" id="projects">
+  <div class="text-center mb-5">
+    <h2 class="section-title text-center mb-2">Selected Project</h2>
+    <p class="text-muted">Explore my projects to experience enterprise-level architecture and scalable solutions.</p>
+  </div>
+  
+  <div class="projects-grid">
+    @for (project of projectsData(); track project.title) {
+      <div class="project-card reveal">
+        <div class="project-image-wrapper">
+          <img [src]="project.imageUrl" [alt]="project.title" class="project-img">
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            @for (tag of project.tags; track tag) {
+              <span class="tag-pill">{{ tag }}</span>
+            }
+          </div>
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-tagline">{{ project.tagline }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

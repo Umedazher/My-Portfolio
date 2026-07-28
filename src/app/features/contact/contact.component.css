@@ -1,0 +1,204 @@
+.footer-cta-card {
+    background: linear-gradient(180deg, #14151a 0%, #0d0e12 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.cta-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.cta-subheading {
+    color: #a0a0a0;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+}
+
+.btn.lg {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+}
+
+/* .btn-primary {
+    background-color: #ff5a36;
+    color: white;
+} */
+
+/* .btn-primary:hover {
+    background-color: #ff7556;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -6px rgba(255, 90, 54, 0.5);
+} */
+
+/* .btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+} */
+
+/* .contact-form-inline {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+} */
+
+/* .input-field {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #1c1d24;
+    color: #fff;
+    outline: none;
+    flex: 1;
+    min-width: 150px;
+} */
+
+/* .input-field:focus {
+    border-color: #ff5a36;
+} */
+
+/* .success-text {
+    color: #10b981;
+    font-size: 0.9rem;
+} */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.github {
+    background: #333;
+}
+
+.github:hover {
+    box-shadow: 0 8px 15px -5px rgba(255, 255, 255, 0.2);
+}
+
+.linkedin {
+    background: #0077b5;
+}
+
+.linkedin:hover {
+    box-shadow: 0 8px 15px -5px rgba(0, 119, 181, 0.5);
+}
+
+.mail {
+    background: #ea4335;
+}
+
+.mail:hover {
+    box-shadow: 0 8px 15px -5px rgba(234, 67, 53, 0.5);
+}
+
+.floating-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff5a36;
+    box-shadow: 0 0 15px #ff5a36;
+    position: absolute;
+}
+
+.bottom-center {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon-sm {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+}
+
+.icon-md {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+}
+
+
+/* --- "Let's Talk" Button Hover Animation (Match Hero Component) --- */
+.btn-primary { 
+  background-color: #ff5a36; 
+  color: white; 
+  border: 1px solid #b83a20; 
+  box-shadow: 0 0 0 2px rgba(255, 90, 54, 0.15); 
+}
+.btn-primary .hover-arrow { transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+.btn-primary:hover { background-color: #ff6a4a; transform: translateY(-2px); box-shadow: 0 8px 20px -6px rgba(255, 90, 54, 0.6); }
+.btn-primary:hover .hover-arrow { transform: rotate(45deg); }
+
+/* --- New Contact Details Layout --- */
+.contact-details-inline { 
+  display: flex; 
+  justify-content: center; 
+  gap: 15px; 
+  flex-wrap: wrap; 
+  max-width: 700px;
+  margin: 2rem auto 0 auto; 
+}
+
+
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1c1d24;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-pill:hover {
+  background: rgba(255, 90, 54, 0.1);
+  border-color: #ff5a36;
+  color: #ff5a36;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -10px rgba(255, 90, 54, 0.3);
+}

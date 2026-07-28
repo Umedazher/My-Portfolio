@@ -1,0 +1,274 @@
+/* .hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+} */
+
+.hero-section { 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  /* Reduced top padding so content shifts up slightly */
+  padding-top: 80px; 
+}
+
+/* .avatar-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+} */
+.avatar-container { margin-bottom: 0.5rem; cursor: pointer; }
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #1c1d24;
+    margin: 0 auto;
+    transition: border-color 0.3s ease;
+}
+
+.avatar-container:hover .avatar {
+    border-color: rgba(255, 90, 54, 0.4);
+}
+
+/* .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+} */
+
+.avatar-img { 
+  width: auto; 
+  /* Reduced avatar height */
+  height: 160px; 
+  object-fit: contain; 
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+/* .avatar-container:hover .avatar-img {
+    transform: scale(1.1);
+} */
+
+.avatar-container:hover .avatar-img { transform: scale(1.05); }
+
+
+
+.floating-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff5a36;
+    box-shadow: 0 0 15px #ff5a36;
+    position: absolute;
+}
+
+.top-left {
+    top: 20%;
+    left: -40px;
+}
+
+/* .greeting {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #fff;
+} */
+
+.greeting { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem; color: #fff; }
+.role-subtitle { font-size: 1rem; color: #a0a0a0; margin-bottom: 1.5rem; font-weight: 500; letter-spacing: 0.5px; }
+
+.headline { 
+  font-size: clamp(2.2rem, 5vw, 4rem); 
+  line-height: 1.1; 
+  font-weight: 600; 
+  /* Tightened gap below headline */
+  margin-bottom: 2rem; 
+  letter-spacing: -0.03em; 
+  color: #fff; 
+}
+
+.italic-serif { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; color: #fff; }
+
+.stats-row { 
+  display: flex; 
+  gap: 2rem; 
+  justify-content: center; 
+  margin-bottom: 2.5rem; 
+  flex-wrap: wrap; 
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-number {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ff5a36;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #a0a0a0;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    text-decoration: none;
+}
+
+.btn.lg {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+}
+
+.btn-primary {
+    background-color: #ff5a36;
+    color: white;
+    /* Adds the darker reddish edge seen in the image */
+    border: 1px solid #b83a20;
+    box-shadow: 0 0 0 2px rgba(255, 90, 54, 0.15);
+}
+
+.btn-primary .hover-arrow {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    background-color: #ff6a4a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -6px rgba(255, 90, 54, 0.6);
+}
+
+
+.btn-primary:hover .hover-arrow {
+    transform: rotate(45deg);
+}
+
+/* --- Dark Button (View Resume) with Animated Border --- */
+.btn-dark {
+    position: relative;
+    background: transparent;
+    color: #fff;
+    border: none;
+    /* Removed standard border to use pseudo-elements instead */
+    overflow: hidden;
+    /* Keeps the spinning gradient strictly within the rounded edges */
+    z-index: 1;
+}
+
+/* 1. The moving shine gradient */
+.btn-dark::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent 75%, rgba(255, 255, 255, 0.9) 100%);
+    animation: rotate-shine 2s linear infinite;
+    z-index: -2;
+}
+
+/* 2. The inner dark button background */
+.btn-dark::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    /* The distance from the edge, creating a 1px border */
+    background: #050505;
+    border-radius: 29px;
+    /* Slightly less than the parent's 30px to fit perfectly */
+    z-index: -1;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3. The rotation animation keyframes */
+@keyframes rotate-shine {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 4. Hover state: Stop animation, make border constant */
+.btn-dark:hover {
+    transform: translateY(-2px);
+}
+
+.btn-dark:hover::before {
+    animation: none;
+    /* Stops the spinning */
+    background: #555555;
+    /* The constant solid border color on hover */
+}
+
+.btn-dark:hover::after {
+    background: #000000;
+    /* Replicates the bottom reflection glow on the inner background */
+    box-shadow: inset 0 -2px 5px -1px rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: #1c1d24;
+    border-color: #a0a0a0;
+    transform: translateY(-2px);
+}
+
+.icon-sm {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+}
+
+@media (max-width: 900px) {
+    .stats-row {
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-group .btn {
+        width: 100%;
+    }
+}

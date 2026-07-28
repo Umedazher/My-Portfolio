@@ -1,0 +1,111 @@
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    background: rgba(20, 21, 26, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    z-index: 1000;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { 
+  font-size: 1.5rem; 
+  font-weight: 800; 
+  color: #ff5a36; /* Matches your Let's Talk button background */
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  font-style: normal; /* Removes the italics */
+  transform: none; /* Removes the skew */
+  text-shadow: none; /* Removes the shadow */
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ff5a36;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    text-decoration: none;
+}
+
+/* Replace your existing .btn-primary and .btn-primary:hover with this: */
+.btn-primary { 
+  background-color: #ff5a36; 
+  color: white; 
+  border: 1px solid #b83a20; 
+  box-shadow: 0 0 0 2px rgba(255, 90, 54, 0.15); 
+}
+
+.btn-primary .hover-arrow {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover { 
+  background-color: #ff6a4a; 
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 20px -6px rgba(255, 90, 54, 0.6);
+}
+
+.btn-primary:hover .hover-arrow {
+  transform: rotate(45deg); 
+}
+.icon-sm {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+}

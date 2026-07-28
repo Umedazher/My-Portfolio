@@ -1,0 +1,27 @@
+<section class="section layout-split" id="about">
+  <div class="split-left">
+    <h2 class="section-title">Passionate about crafting<br><span class="text-muted">scalable and functional apps</span></h2>
+    <!-- <p class="bio-text">
+      I'm <strong>Umed Azhar</strong>, an <strong>Angular Developer</strong> passionate about crafting seamless, highly-performant enterprise applications. With a background in developing modular architectures and an interest in RxJS state management, I blend code quality with functionality to build <strong>intuitive web interfaces</strong>. Always evolving with modern framework trends, I focus on creating <strong>meaningful, engaging, and robust</strong> digital solutions. Let's collaborate!
+    </p> -->
+    <p class="bio-text">
+      <strong>Angular Developer</strong> with 4+ years of experience building scalable and high-performance enterprise web applications using <strong>Angular (v21+)</strong>, <strong>TypeScript</strong>, and <strong>RxJS</strong>. Skilled in developing responsive UI, implementing state management (<strong>NgRx</strong>), and optimizing application performance through lazy loading and modular architecture. Experienced in integrating RESTful APIs and <strong>Spring Boot</strong> backend services. Strong collaborator in Agile environments with CI/CD pipelines, focused on delivering efficient and user-centric solutions.
+    </p>
+  </div>
+  <div class="split-right">
+    <div class="experience-list">
+      @for (exp of experienceData(); track exp.role) {
+        <div class="experience-pill reveal">
+          <div class="exp-icon">
+            <app-icon [name]="exp.type === 'job' ? 'briefcase' : 'monitor'" class="icon-md"></app-icon>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-role">{{ exp.role }}</h3>
+            <p class="exp-company">{{ exp.company }} &bull; Full Time</p>
+          </div>
+          <div class="exp-date">{{ exp.period }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
