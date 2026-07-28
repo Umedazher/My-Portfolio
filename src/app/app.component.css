@@ -104,3 +104,24 @@
     font-size: 1.3rem;
   }
 }
+
+/* --- Mobile Animation & Cursor Fix --- */
+@media (max-width: 768px) {
+  /* 1. Hide the orange dot on touch devices to prevent it from getting stuck */
+  .custom-cursor {
+    display: none !important;
+  }
+
+  /* 2. Add a seamless, infinite sliding animation to the background grid */
+  .bg-grid {
+    height: calc(100vh + 60px); /* Add extra height to allow for shifting */
+    top: -60px; /* Offset exactly by one grid square */
+    animation: mobileGridScroll 12s linear infinite;
+  }
+}
+
+/* The animation loops perfectly because it moves exactly one 60px grid square */
+@keyframes mobileGridScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
